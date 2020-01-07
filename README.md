@@ -6,6 +6,8 @@ Install Git to clone the repository; Alternatively you can download the scripts 
 
 # Install required packages
 python - https://www.python.org/downloads/windows/
+
 numpy - "pip install numpy" in the command line, ie CMD terminal
+
 pandas - "pip install pandas" in the command line
 
