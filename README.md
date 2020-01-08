@@ -17,5 +17,6 @@ Download and install pandas - "pip install pandas" in the command line
 This should contain the folders and the names of the files on whiich partial MAF should be determined. If a file contains several samples, these need to be specified in the samples field (";" separated)
 ## Run
 python genomes_to_maf.py --samples_file [samples_to_aggregate.xls] --destination [destination folder]
+
 *replace [name] with the name of the file 
 
