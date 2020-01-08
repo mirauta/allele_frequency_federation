@@ -1,10 +1,10 @@
-import glob
+animport glob
 import argparse
 
 from genome_vcf_to_maf_functions import *
 
 parser = argparse.ArgumentParser(description='read path and parameters')
-parser.add_argument('--samples_file',  metavar='p',help='...')
+parser.add_argument('--samples_file',  metavar='p',help='file containing the list of')
 parser.add_argument('--destination',  metavar='d',help='...')
 parser.add_argument('--add_to_existing',  metavar='n',help='...',default=0)
 #
@@ -13,10 +13,8 @@ samples_file=args.samples_file
 destination=args.destination
 add_to_existing=args.add_to_existing
 
-#python genomes_to_maf.py --samples_file '/Users/mirauta/Projects/RSBI/Federare_genetica_date/samples_to_aggregate.xls' --destination '/Users/mirauta/Projects/RSBI/Federare_genetica_date/'
-#samples_file='/Users/mirauta/Projects/RSBI/Federare_genetica_date/samples_to_aggregate.xls'
-#destination='/Users/mirauta/Projects/RSBI/Federare_genetica_date/'
-#add_to_existing = 0
+#python genomes_to_maf.py --samples_file '.....' --destination '...'
+
 
 samples_metadata=pd.read_table(samples_file,index_col=0)
 samples_metadata.index=samples_metadata['Sample_folder']+samples_metadata['Sample_file']
