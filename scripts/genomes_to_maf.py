@@ -19,7 +19,8 @@ add_to_existing=args.add_to_existing
 #add_to_existing = 0
 
 samples_metadata=pd.read_table(samples_file,index_col=0)
-samples_metadata.index=samples_metadata['Sample_folder']+samples_metadata['Sample_file']
+samples_metadata.index=samples_metadata['Sample_folder']+"/"+samples_metadata['Sample_file']
+print (samples_metadata.index)
 print ("\nTo change the sample list please edit the file: "+samples_file+"\n")
 ''' MAIN '''
 
