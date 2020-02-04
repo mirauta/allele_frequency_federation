@@ -17,9 +17,11 @@ add_to_existing=args.add_to_existing
 #samples_file='/Users/mirauta/Projects/RSBI/Federare_genetica_date/samples_to_aggregate.xls'
 #destination='/Users/mirauta/Projects/RSBI/Federare_genetica_date/'
 #add_to_existing = 0
+maf=MAF()
+print (maf.foldersep)
 
 samples_metadata=pd.read_table(samples_file,index_col=0)
-samples_metadata.index=samples_metadata['Sample_folder']+"/"+samples_metadata['Sample_file']
+samples_metadata.index=samples_metadata['Sample_folder']+maf.foldersep+samples_metadata['Sample_file']
 #print (samples_metadata.index)
 print ("\nTo change the sample list please edit the file: "+samples_file+"\n")
 ''' MAIN '''
@@ -29,8 +31,7 @@ print ("\nTo change the sample list please edit the file: "+samples_file+"\n")
 
 chroms=np.hstack([[str(c) for c in np.arange(1,23)],"MT",'X','Y'])
 
-maf=MAF()
-print (maf.foldersep)
+
 
 if add_to_existing==0:
     print ("creating new maf files")
